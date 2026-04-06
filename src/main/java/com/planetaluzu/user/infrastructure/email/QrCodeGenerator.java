@@ -10,9 +10,9 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-class QrCodeGenerator {
+public class QrCodeGenerator {
 
-    static byte[] generate(String text) {
+    public static byte[] generate(String text) {
         try {
             int width = 200;
             int height = 200;

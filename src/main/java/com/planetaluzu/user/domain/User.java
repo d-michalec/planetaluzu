@@ -28,7 +28,7 @@ public class User {
         this.expiresAt = createdAt.plusHours(12);
     }
 
-    public void markAsisPaid() {
+    public void markAsPaid() {
         this.isPaid = true;
     }
 }

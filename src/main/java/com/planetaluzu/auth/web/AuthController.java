@@ -2,6 +2,8 @@ package com.planetaluzu.auth.web;
 
 import com.planetaluzu.auth.web.dto.RegisterRequest;
 import com.planetaluzu.auth.web.dto.RegisterResponse;
+import com.planetaluzu.ticket.domain.Ticket;
+import com.planetaluzu.user.application.port.in.ConfirmPaymentUseCase;
 import com.planetaluzu.user.application.port.in.RegisterUserUseCase;
 import com.planetaluzu.user.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final RegisterUserUseCase registerUserUseCase;
+    private final ConfirmPaymentUseCase confirmPaymentUseCase;
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
@@ -24,6 +27,12 @@ public class AuthController {
                 request.getEmail()
         );
 
-        return new RegisterResponse(user.getId(), user.getEmail(), user.getReservationId());
+        return new RegisterResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getReservationId());
+    }
+
+    @PostMapping("/admin/reservations/{reservationId}/confirm-payment")
+    @ResponseStatus(HttpStatus.OK)
+    public Ticket confirmPayment(@PathVariable String reservationId) {
+        return confirmPaymentUseCase.execute(reservationId);
     }
 }

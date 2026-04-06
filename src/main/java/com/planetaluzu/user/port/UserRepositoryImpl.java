@@ -27,4 +27,10 @@ public class UserRepositoryImpl implements UserRepository {
         return jpaUserRepository.findByEmail(email)
                 .map(userMapper::toDomain);
     }
+
+    @Override
+    public Optional<User> findByReservationId(String reservationId) {
+        return jpaUserRepository.findByReservationId(reservationId)
+                .map(userMapper::toDomain);
+    }
 }
