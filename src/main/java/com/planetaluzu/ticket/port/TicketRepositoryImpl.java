@@ -7,6 +7,8 @@ import com.planetaluzu.ticket.infrastructure.repository.JpaTicketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Repository
 public class TicketRepositoryImpl implements TicketRepository {
@@ -18,5 +20,20 @@ public class TicketRepositoryImpl implements TicketRepository {
         TicketJpaEntity entity = ticketMapper.toEntity(ticket);
         TicketJpaEntity saved = jpaTicketRepository.save(entity);
         return ticketMapper.toDomain(saved);
+    }
+
+    @Override
+    public Optional<Ticket> findByTicketUuid(String reservationId) {
+        return jpaTicketRepository.findByTicketUuid(reservationId).map(ticketMapper::toDomain);
+    }
+
+    @Override
+    public Optional<Ticket> findByRegistrationId(Long registrationId) {
+        return jpaTicketRepository.findByRegistrationId(registrationId).map(ticketMapper::toDomain);
+    }
+
+    @Override
+    public void deleteAll() {
+        jpaTicketRepository.deleteAllInBatch();
     }
 }

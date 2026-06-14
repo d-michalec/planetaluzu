@@ -17,8 +17,8 @@ public class TicketJpaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
+    @Column(name = "registration_id", nullable = false)
+    private Long registrationId;
 
     @Column(name = "ticket_uuid", nullable = false, unique = true)
     private String ticketUuid;
@@ -26,9 +26,6 @@ public class TicketJpaEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private TicketStatus status;
-
-    @Column(name = "headphones_id")
-    private Long headphonesId;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
