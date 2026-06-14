@@ -29,6 +29,8 @@ public class SmtpEmailSender implements EmailSender {
     private static final String EMAIL_MUTED = "#d8c5da";
     private static final String EMAIL_BORDER = "#5e1a66";
     private static final String REVOLUT_PAYMENT_URL = "https://revolut.me/planeta_luzu";
+    private static final String WEBSITE_URL = "https://planeta-luzu.pl";
+    private static final String CONTACT_EMAIL = "planetaluzu.sd@gmail.com";
 
     private final JavaMailSender mailSender;
 
@@ -68,8 +70,8 @@ public class SmtpEmailSender implements EmailSender {
                     + "<p style='color:" + EMAIL_MUTED + ";'>Dzięki! - <strong style='color:" + EMAIL_TEXT + ";'>PlanetaLuzu</strong></p>"
                     + "<hr style='border:0; border-top:1px solid " + EMAIL_BORDER + "; margin:24px 0 16px;'/>"
                     + "<p style='font-size:12px; line-height:1.5; color:" + EMAIL_MUTED + ";'>&copy; 2025 PlanetaLuzu.<br/>"
-                    + "<a href='#' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
-                    + "<a href='mailto:test@gmail.com' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
+                    + "<a href='" + WEBSITE_URL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
+                    + "<a href='mailto:" + CONTACT_EMAIL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
                     + "</div></body></html>";
 
             helper.setText(htmlContent, true);
@@ -98,7 +100,7 @@ public class SmtpEmailSender implements EmailSender {
             byte[] qrImage = QrCodeGenerator.generate(qrToken);
 
             // HTML maila
-            String mailUsername = "test@gmail.com";
+            String mailUsername = CONTACT_EMAIL;
             String htmlContent = "<html><body style='margin:0; background-color:" + EMAIL_BG + "; color:" + EMAIL_TEXT + "; font-family:Inter, Arial, sans-serif; padding:24px;'>"
                     + "<div style='max-width:600px; margin:auto; background-color:" + EMAIL_PANEL + "; border:1px solid " + EMAIL_BORDER + "; border-radius:8px; padding:28px; text-align:center; box-shadow:0 16px 38px rgba(255,0,200,0.18);'>"
                     + "<img src='cid:logo' alt='PlanetaLuzu Logo' style='width:150px; margin-bottom:20px;'/>"
@@ -112,7 +114,7 @@ public class SmtpEmailSender implements EmailSender {
                     + "<p style='color:" + EMAIL_MUTED + ";'>DOZO! - <strong style='color:" + EMAIL_TEXT + ";'>PlanetaLuzu</strong></p>"
                     + "<hr style='border:0; border-top:1px solid " + EMAIL_BORDER + "; margin:24px 0 16px;'/>"
                     + "<p style='font-size:12px; line-height:1.5; color:" + EMAIL_MUTED + ";'>&copy; 2025 PlanetaLuzu.<br/>"
-                    + "<a href='#' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
+                    + "<a href='" + WEBSITE_URL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
                     + "<a href='mailto:" + mailUsername + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
                     + "</div></body></html>";
 
@@ -161,8 +163,8 @@ public class SmtpEmailSender implements EmailSender {
                     + "<p style='color:" + EMAIL_MUTED + ";'>Dzięki! - <strong style='color:" + EMAIL_TEXT + ";'>PlanetaLuzu</strong></p>"
                     + "<hr style='border:0; border-top:1px solid " + EMAIL_BORDER + "; margin:24px 0 16px;'/>"
                     + "<p style='font-size:12px; line-height:1.5; color:" + EMAIL_MUTED + ";'>&copy; 2025 PlanetaLuzu.<br/>"
-                    + "<a href='#' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
-                    + "<a href='mailto:test@gmail.com' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
+                    + "<a href='" + WEBSITE_URL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
+                    + "<a href='mailto:" + CONTACT_EMAIL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
                     + "</div></body></html>";
 
             helper.setText(htmlContent, true);
@@ -195,8 +197,8 @@ public class SmtpEmailSender implements EmailSender {
                     + "<p style='color:" + EMAIL_MUTED + ";'>Do zobaczenia! - <strong style='color:" + EMAIL_TEXT + ";'>PlanetaLuzu</strong></p>"
                     + "<hr style='border:0; border-top:1px solid " + EMAIL_BORDER + "; margin:24px 0 16px;'/>"
                     + "<p style='font-size:12px; line-height:1.5; color:" + EMAIL_MUTED + ";'>&copy; 2025 PlanetaLuzu.<br/>"
-                    + "<a href='#' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
-                    + "<a href='mailto:test@gmail.com' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
+                    + "<a href='" + WEBSITE_URL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Odwiedź naszą stronę</a> | "
+                    + "<a href='mailto:" + CONTACT_EMAIL + "' style='color:" + EMAIL_ACCENT + "; text-decoration:none; font-weight:800;'>Kontakt</a></p>"
                     + "</div></body></html>";
 
             helper.setText(htmlContent, true);
