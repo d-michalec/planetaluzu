@@ -193,7 +193,7 @@ public class SmtpEmailSender implements EmailSender {
                     + "<p style='margin:0 0 10px; color:" + EMAIL_ACCENT_SECONDARY + "; font-size:12px; font-weight:800; text-transform:uppercase;'>Rezerwacja usunięta</p>"
                     + "<h2 style='margin:0 0 18px; color:" + EMAIL_TEXT + "; font-size:28px; line-height:1.1;'>Cześć " + firstName + "</h2>"
                     + "<p style='color:" + EMAIL_MUTED + "; line-height:1.6;'>Twoja rezerwacja słuchawek o numerze <strong style='color:" + EMAIL_ACCENT + ";'>" + reservationId + "</strong> nie została opłacona w wyznaczonym czasie i została usunięta.</p>"
-                    + "<p style='color:" + EMAIL_MUTED + "; line-height:1.6;'>Jeśli nadal chcesz zarezerwować słuchawki, wypełnij formularz rejestracyjny ponownie.</p>"
+                    + "<p style='color:" + EMAIL_MUTED + "; line-height:1.6;'>Jeśli nadal chcesz wziąć udział w imprezie, wypełnij formularz rejestracyjny ponownie.</p>"
                     + "<p style='color:" + EMAIL_MUTED + ";'>Do zobaczenia! - <strong style='color:" + EMAIL_TEXT + ";'>PlanetaLuzu</strong></p>"
                     + "<hr style='border:0; border-top:1px solid " + EMAIL_BORDER + "; margin:24px 0 16px;'/>"
                     + "<p style='font-size:12px; line-height:1.5; color:" + EMAIL_MUTED + ";'>&copy; 2025 PlanetaLuzu.<br/>"
